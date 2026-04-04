@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbit&family=Orbitron:wght@400..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.8s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0f0113;
+  /* Твой анимированный фон */
+  background-image: url("./landingimg/bggradient.png");
+  background-size: 110% 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: moveGradient 12s ease-in-out infinite;
+  position: relative;
+  overflow-x: hidden;
+  color: white;
+  font-family: "Arial", sans-serif; /* Позже замени на футуристичный */
+}
+
+/* Светлячки */
+body::before {
+  content: "";
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+
+  background-image: url("./landingimg/particles.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+
+  /* Смешивание с фоном */
+  mix-blend-mode: screen;
+
+  /* --- РЕГУЛИРОВКА ВИДИМОСТИ --- */
+  opacity: 0.25; /* 15% видимости — будут как легкая пыль */
+  filter: brightness(0.7) blur(1px); /* Делаем чуть тусклее и мягче */
+  /* ---------------------------- */
+
+  animation: moveFireflies 12s linear infinite; /* Замедлил движение для спокойствия */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Плавное движение (чуть медленнее) */
+@keyframes moveFireflies {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+/* Секция Intro */
+.intro {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 1;
+}
+
+/* Девушка на фоне */
+.imgpart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 75%; /* Занимает правую часть */
+  height: 100%;
+  z-index: -1; /* Под текстом */
+}
+
+.imgpart img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Чтобы девушка не растягивалась */
+  object-position: right bottom;
+}
+
+/* Текстовая часть */
+.txtpart {
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+}
+
+.txtpart h1 {
+  font-family: Orbitron;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 80px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+/* Кнопки */
+.buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+button {
+  background: none;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-demo {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+.btn-partner {
+  border: none;
+}
+.btn-partner img {
+  width: 15px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Боковая панель */
+.aside {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.aside img {
+    transition: .7s;
+  width: 36px;
+  cursor: pointer;
+}
+.aside img:hover {
+    transform: scale(1.1);
+}
+.aside span {
+    transition: .7s;
+  font-family: Orbitron;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 36px;
+  color: #ff0088;
+  line-height: 100%;
+  letter-spacing: 0%;
+  cursor: pointer;
+}
+.aside span:hover {
+    transform: scale(1.1);
+}
+/* Анимации те же */
+@keyframes moveGradient {
+  0%,
+  100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 52% 48%;
+  }
+}
+
+@keyframes moveFireflies {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(3%, 3%);
+  }
+}
+.services {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 600px;
+  background: #01001950;
+  border-radius: 6%;
+  display: flex;
+  justify-content: space-between;
+}
+.services .card {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.services .card img {
+  width: 90%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 12px;
+
+  display: inline-block;
+
+  margin: 20px;
+
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #ff00ff,
+    0 0 80px #ff00ff,
+    inset 0 0 5px #fff,
+    inset 0 0 10px #ff00ff,
+    inset 0 0 20px #ff00ff;
+  animation: runningFlash 1.5s linear infinite;
+}
+.services .card:nth-child(2) img {
+  animation: runningFlash 2s linear infinite;
+}
+.services .card:nth-child(3) img {
+  animation: runningFlash 3s linear infinite;
+}
+.services .card img:hover {
+  transform: scale(1.1);
+}
+
+/* Анимация: меняем положение тени так, будто это бегающая точка */
+@keyframes runningFlash {
+  0% {
+    filter: drop-shadow(0px -10px 5px #fff); /* Огонек сверху */
+  }
+  25% {
+    filter: drop-shadow(10px 0px 5px #fff); /* Огонек справа */
+  }
+  50% {
+    filter: drop-shadow(0px 10px 5px #fff); /* Огонек снизу */
+  }
+  75% {
+    filter: drop-shadow(-10px 0px 5px #fff); /* Огонек слева */
+  }
+  100% {
+    filter: drop-shadow(0px -10px 5px #fff); /* Возврат наверх */
+  }
+}
+.services .card p {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.advantages {
+  width: 100%;
+  height: 1200px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.advantages h1:nth-child(1) {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #010019;
+}
+.advantages h1:nth-child(3) {
+  font-family: Orbit;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 64px;
+  line-height: 145%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.advantages h1:nth-child(3) span {
+  color: #ff0088;
+}
+.advantages .cards {
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+.advantages .cards .card {
+  width: 100/3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.advantages .cards .card img {
+  width: 80%;
+  height: auto;
+  width: 90%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 12px;
+
+  display: inline-block;
+
+  margin: 20px;
+
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #ff00ff,
+    0 0 80px #ff00ff,
+    inset 0 0 5px #fff,
+    inset 0 0 10px #ff00ff,
+    inset 0 0 20px #ff00ff;
+  animation: runningFlash 1.5s linear infinite;
+  background: rgba(0, 0, 0, 0.849);
+  transition: .7s;
+}
+.advantages .cards .card img:hover {
+    transform: scale(1.1);
+}
+.advantages .cards .card p {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+    font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.advantages .cards .card:nth-child(2) img {
+  animation: runningFlash 2s linear infinite;
+}
+
+.advantages .cards .card:nth-child(3) img {
+  animation: runningFlash 1s linear infinite;
+}
+
+.advantages .cards .card:nth-child(4) img {
+  animation: runningFlash 3s linear infinite;
+}
+
+.advantages .card img:hover {
+  transform: scale(1.1);
+}
+.roulette {
+  width: 100%;
+  background: url("./landingimg/roulette.gif");
+    height: 800px;
+    margin: 0;
+    background-size: cover; 
+    background-position: center;
+}
+
+footer {
+
+  display: flex;
+  flex-direction: column;
+  background: #000000b4;
+  width: 100%;
+    padding: 100px 5%;
+    padding-top: 0;
+    height: auto;
+    margin-bottom: 0; 
+    
+}
+footer .toppart {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .toppart img{
+    transition: .7s;
+    width: 20%; 
+}
+footer .toppart img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+footer .toppart .advantages2 {
+  width: 75%;
+  height: 300px;
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: space-between;
+background: url('./landingimg/somebg.png'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* Накладываем темно-синий фильтр поверх фото (как на скрине) */
+    background-color: rgba(255, 255, 255, 0.514); 
+    background-blend-mode: multiply; /* Это смешает фото с цветом */
+
+    /* Эффект стекла */
+    backdrop-filter: blur(10px);
+    border-radius: 45px; 
+    border: 1px solid rgb(255, 255, 255);
+}
+footer .toppart .advantages2 .advantage {
+  width: 100/6%;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+footer .toppart .advantages2 .advantage img {
+    cursor:auto;
+    width: 70%;
+    height: auto;
+    filter: drop-shadow(0 0 5px #fff); /* Базовый свет */
+   
+}
+
+footer .toppart .advantages2 .advantage p{
+font-family: Inter;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+
+}
+footer .bottompart {
+    padding-top: 100px;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .bottompart img{
+    width: 30%;
+    height: auto;
+}
+
+footer .bottompart .txtpart{
+width: 70%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap:50px;
+}
+footer .bottompart .txtpart p{
+    font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+footer .bottompart .txtpart p span{
+color: #FF0088;
+}
+
+footer .bottompart img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#oval{
+
+  position: absolute;
+  z-index: -999;
+  width: 150%;
+  height: auto;
+  top: 1950px;
+  left: -400px;
+}
