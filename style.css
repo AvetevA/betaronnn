@@ -500,10 +500,5 @@ footer .bottompart img:hover{
 
 #oval{
 
-  position: absolute;
-  z-index: -999;
-  width: 2500px;
-  height: auto;
-  top: 1950px;
-  left: -400px;
+  display:none;
 }
