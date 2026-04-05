@@ -760,7 +760,11 @@ header .links ul{
         width: 100px; /* Размер иконок */
         height: auto;
     }
+#oval {
 
+  display: none;
+
+}
 }
 
 @media(max-width:388px){
