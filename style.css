@@ -617,6 +617,7 @@ footer .bottompart img:hover {
         backdrop-filter: blur(10px);
         z-index: 5;
         padding-left: 5%;
+        padding-right: 5%;
     }
 
     button {
@@ -625,7 +626,11 @@ footer .bottompart img:hover {
         white-space: nowrap;
         width: 50%;
     }
+button:nth-child(2){
 
+  padding-right: 50px;
+
+}
     /* --- ВТОРОЙ БЛОК (Services) --- */
     .services {
         width: 100%;
@@ -752,4 +757,18 @@ header .links ul{
         width: 100px; /* Размер иконок */
         height: auto;
     }
+}
+.hidden-element {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    
+    /* Анимация будет работать и при добавлении класса, и при его удалении */
+    transition: all 0.7s ease-in-out; 
+}
+
+.show-element {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
 }
