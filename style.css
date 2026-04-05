@@ -631,6 +631,11 @@ button:nth-child(2){
   padding-right: 50px;
 
 }
+button:nth-child(2) img{
+  margin-left: 0;
+ width: 30px; 
+}
+
     /* --- ВТОРОЙ БЛОК (Services) --- */
     .services {
         width: 100%;
