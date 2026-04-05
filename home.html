@@ -12,7 +12,7 @@
   <video autoplay muted loop playsinline class="bg-video">
     <source src="./landingimg/14081587_1920_1080_60fps.mp4" type="video/mp4">
   </video>
-    <header>
+    <header class="hidden-element">
       <img class="logo" src="./landingimg/betaronlogo.png" alt="">
 
       <div class="links">
@@ -26,26 +26,26 @@
     </header>
     <section class="intro">
       <div class="imgpart">
-        <img
+        <img class="hidden-element"
           src="./landingimg/girl.png"
           alt="Betaron Girl"
         />
       </div>
 
-      <div class="txtpart">
+      <div class="txtpart hidden-element">
         <h1>BETARON:<br /><span>Tecnología</span><br />para Escalar</h1>
       
       </div>
 
     </section>
-      <div class="buttons">
+      <div class="buttons hidden-element">
           <button class="btn-demo">Solicita una demo</button>
           <button class="btn-partner">
             Convertite en socio
             <img src="./landingimg/arrow.png" alt="" />
           </button>
         </div>
-    <section class="services">
+    <section class="services hidden-element">
       <div class="card">
         <img src="./landingimg/casino.png" alt="" />
         <p>Casino</p>
@@ -59,7 +59,7 @@
         <p>Apuestas deportivas</p>
       </div>
     </section>
-    <section class="advantages">
+    <section class="advantages hidden-element">
       <h1>Haz crecer tu negocio con una plataforma integral</h1>
       <div class="cards">
         <div class="card">
@@ -79,11 +79,11 @@
           <p>Diseño y desarrollo</p>
         </div>
       </div>
-      <h1><span>En Betaron, </span>el crecimiento se construye juntos</h1>
+      <h1 class="hidden-element"><span>En Betaron, </span>el crecimiento se construye juntos</h1>
     </section>
-    <section class="roulette"><img src="./landingimg/roulette.gif" alt=""></section>
+    <section class="roulette hidden-element"><img src="./landingimg/roulette.gif" alt=""></section>
     <footer>
-      <div class="toppart">
+      <div class="toppart hidden-element">
         <div class="advantages2">
           <div class="advantage">
             <img src="./landingimg/encrypted.png" alt="" />
@@ -115,7 +115,7 @@
         </div>
         <img src="./landingimg/contact.png" alt="" />
       </div>
-      <div class="bottompart">
+      <div class="bottompart hidden-element">
         <div class="txtpart">
           <p><span>150+</span> Proveedores integrados</p>
 
@@ -127,4 +127,24 @@
     </footer>
     <img id="oval" src="./landingimg/bgparticle.png" alt="">
   </body>
+  <script>
+   const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Элемент вошел в зону видимости — показываем
+            entry.target.classList.add('show-element');
+        } else {
+            // Элемент вышел из зоны видимости — скрываем обратно
+            entry.target.classList.remove('show-element');
+        }
+    });
+}, {
+    // Настраиваем чувствительность: 
+    // 0.1 означает, что эффект сработает, когда видно хотя бы 10% элемента
+    threshold: 0.1 
+});
+
+const hiddenElements = document.querySelectorAll('.hidden-element');
+hiddenElements.forEach((el) => observer.observe(el));
+  </script>
 </html>
