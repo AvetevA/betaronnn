@@ -431,7 +431,7 @@ footer .toppart .advantages2 .advantage {
 footer .toppart .advantages2 .advantage img {
   cursor: auto;
   width: 75px;
-  height: auto;
+  height: 100%
   filter: drop-shadow(0 0 5px #fff); /* Базовый свет */
 }
 
@@ -490,4 +490,266 @@ footer .bottompart img:hover {
   z-index: -999;
   opacity: 0.7;
   top: 2300px;
+}
+/* --- ГИБКИЙ РЕСПОНСИВ (БЕЗ ПЕРЕНОСА В СТОЛБИК) --- */
+
+@media (max-width: 1200px) {
+    /* Плавное уменьшение заголовка */
+    .txtpart h1 {
+        font-size: 6vw; 
+    }
+
+    /* Секция услуг: сжимаем карточки, чтобы не вышли за границы */
+    .services .card img {
+        width: 22vw; /* Размер картинки зависит от ширины экрана */
+        min-width: 100px; /* Чтобы не стали совсем крошечными */
+    }
+
+    .services .card p {
+        font-size: 1.8vw;
+    }
+
+    /* Секция преимуществ (4 карточки в ряд) */
+    .advantages .cards .card {
+        width: 24%; /* Оставляем в ряд */
+    }
+
+    .advantages .cards .card img {
+        width: 15vw;
+    }
+
+    .advantages h1:nth-child(3) {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 870px) {
+    /* 1. Убираем горизонтальный скролл */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* 2. Перестраиваем сетку: 3 колонки, 2 ряда */
+    footer .toppart .advantages2 {
+        width: 90%; 
+        height: auto; /* Высота теперь подстраивается под контент */
+        padding: 30px 15px;
+        margin: 0 auto;
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+        grid-template-rows: repeat(2, auto);    /* 2 ряда */
+        gap: 20px 10px; /* Отступы: 20px между рядами, 10px между колонками */
+        
+        background-size: cover;
+        border-radius: 30px;
+    }
+
+    /* 3. Центрируем элементы внутри сетки */
+    footer .toppart .advantages2 .advantage {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* 4. Настраиваем размеры иконок */
+    footer .toppart .advantages2 .advantage img {
+        width: 40px; /* Иконки теперь могут быть крупнее */
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    /* 5. Настраиваем текст */
+    footer .toppart .advantages2 .advantage p {
+        font-size: 9px; /* Текст стал крупнее и читабельнее */
+        line-height: 1.2;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* 6. Исправляем нижнюю часть футера, чтобы она не слипалась */
+    footer .bottompart .txtpart p, span {
+      font-size: 16px;
+    }
+    
+}
+@media (max-width: 770px) {
+    /* --- ОБЩИЕ НАСТРОЙКИ --- */
+    html, body {
+        overflow-x: hidden; /* Убираем боковой скролл */
+        width: 100%;
+    }
+
+    /* --- БЛОК ИНТРО И КНОПКИ --- */
+    .intro {
+        height: auto;
+        min-height: 500px;
+        padding-top: 80px;
+        display: flex;
+      
+    }
+    .intro span{
+      font-size: 30px;
+    }
+    .imgpart {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 70%; /* Фото остается на своем месте справа */
+        z-index: 1;
+        pointer-events: none; /* Чтобы фото не мешало кликать по кнопкам */
+    }
+
+    /* Кнопки: сохраняем дизайн, но растягиваем на весь экран */
+    .buttons {
+        width: 100vw; /* На всю ширину экрана */
+        margin-left: calc(-50vw + 50%); /* Магия центровки, если родитель имеет padding */
+        display: flex;
+        flex-direction: row; /* Оставляем в ряд, как в оригинале */
+        justify-content: center; /* Центрируем кнопки внутри */
+        gap: 10px;
+        padding: 20px 0;
+        background: rgba(18, 18, 35, 0.8); /* Твой оригинальный фон */
+        backdrop-filter: blur(10px);
+        z-index: 5;
+        padding-left: 5%;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px; /* Компактный размер, чтобы влезли в ряд */
+        white-space: nowrap;
+        width: 50%;
+    }
+
+    /* --- ВТОРОЙ БЛОК (Services) --- */
+    .services {
+        width: 100%;
+        height: 400px;
+        padding: 60px 0; /* Сделали блок немного больше по высоте */
+        display: flex;
+        justify-content: center; /* ПРИНУДИТЕЛЬНЫЙ ЦЕНТР */
+        align-items: center;
+        gap: 15px;
+        margin: 0 auto;
+    }
+
+    .services .card {
+        width: 30%; /* Равномерное распределение */
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .services .card img {
+        width: 150px; /* Размер иконок */
+        height: auto;
+    }
+
+    /* --- ТРЕТИЙ БЛОК (Advantages - Сетка 2х2) --- */
+    .advantages .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Сетка 2 на 2 */
+        gap: 20px;
+        width: 100%;
+        justify-items: center; /* Центрируем карты в сетке */
+    }
+
+    .advantages .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .advantages .cards .card img{
+      width: 200px;
+    }
+     .advantages .cards .card p{
+      font-size: 20px;
+     }
+    .advantages{
+        padding-bottom: 100px;
+    }
+    .advantages span{
+      font-size: 30px;
+    }
+}
+@media (max-width: 700px) {
+    /* 1. Запрещаем всему сайту "вылезать" вправо */
+    html, body {
+        overflow-x: hidden; /* Убирает горизонтальную полосу прокрутки */
+        width: 100%;
+        position: relative;
+    }
+
+    /* 2. Сбрасываем фиксированную ширину у проблемных элементов */
+    .roulette img {
+        width: 90% !important; /* На твоем скриншоте это может быть главной причиной */
+        height: auto;
+    }
+
+    /* 3. Проверяем хедер и ссылки */
+    header {
+        width: 100%;
+        left: 0;
+    }
+
+    header .links {
+        width: 90%; /* Чтобы навигация не выдавливала контент */
+        gap:25px;
+    }
+header .links ul{
+  width: 70%;
+}
+    /* 4. Исправляем блоки, которые могут иметь фиксированную ширину */
+    .services .card, .advantages .cards .card {
+        width: 100% !important;
+        max-width: 100vw;
+    }
+
+    /* 5. Убираем частицу, если она вылетает за край */
+    #oval {
+      top: 2300px;
+    
+    }
+
+    /* 6. Убеждаемся, что контейнеры не шире экрана */
+    .container, section, footer {
+        max-width: 100vw;
+        overflow: hidden;
+    }
+    
+}
+
+@media(max-width:500px){
+    .intro span{
+      font-size: 20px;
+    }
+     .advantages span{
+      font-size: 20px;
+    }
+        .advantages .cards .card img{
+      width: 150px;
+    }
+     .advantages .cards .card p{
+      font-size: 15px;
+     }
+       .services .card img {
+        width: 100px; /* Размер иконок */
+        height: auto;
+    }
+
+}
+
+@media(max-width:388px){
+     .advantages .cards .card img {
+        width: 100px; /* Размер иконок */
+        height: auto;
+    }
 }
