@@ -22,10 +22,7 @@ body {
   position: relative;
   overflow-x: hidden;
   color: white;
-  font-family: "Arial", sans-serif; 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  font-family: "Arial", sans-serif; /* Позже замени на футуристичный */
 }
 
 /* Светлячки */
@@ -114,25 +111,38 @@ body::before {
 
 /* Кнопки */
 .buttons {
+  height: 200px;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 100%;
   display: flex;
   gap: 20px;
   align-items: center;
+  background: #140E3D;
 }
 
 button {
   background: none;
   color: white;
-  border: 1px solid rgb(255, 255, 255);
-  padding: 12px 25px;
-  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.438);
+  padding: 20px 35px;
+  border-radius: 40px;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s;
+  font-family: Inter;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
 }
 
 .btn-demo {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(5px);
+
+
 }
 
 button:hover {
@@ -143,7 +153,7 @@ button:hover {
   border: none;
 }
 .btn-partner img {
-  width: 15px;
+  width: 40px;
   margin-left: 10px;
   vertical-align: middle;
 }
@@ -160,11 +170,18 @@ button:hover {
 
 .aside img {
     transition: .7s;
-  width: 36px;
+  width: 60px;
   cursor: pointer;
 }
 .aside img:hover {
     transform: scale(1.1);
+}
+.aside .spans{
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .aside span {
     transition: .7s;
@@ -179,6 +196,9 @@ button:hover {
 }
 .aside span:hover {
     transform: scale(1.1);
+}
+.aside .spans span:nth-child(2){
+color: white;
 }
 /* Анимации те же */
 @keyframes moveGradient {
@@ -231,13 +251,13 @@ button:hover {
   margin: 20px;
 
   box-shadow:
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 40px #ff00ff,
-    0 0 80px #ff00ff,
-    inset 0 0 5px #fff,
-    inset 0 0 10px #ff00ff,
-    inset 0 0 20px #ff00ff;
+    0 0 10px #3894fd,
+    0 0 20px #3894fd,
+    0 0 40px #3894fd,
+    0 0 80px #3894fd,
+    inset 0 0 2px #fff,
+    inset 0 0 5px #3894fd,
+    inset 0 0 5px #3894fd;
   animation: runningFlash 1.5s linear infinite;
 }
 .services .card:nth-child(2) img {
@@ -272,7 +292,7 @@ button:hover {
   font-family: Inter;
   font-weight: 700;
   font-style: Bold;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 100%;
   letter-spacing: 0%;
 }
@@ -336,13 +356,13 @@ button:hover {
   margin: 20px;
 
   box-shadow:
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 40px #ff00ff,
-    0 0 80px #ff00ff,
+    0 0 10px #3894fd,
+    0 0 20px #3894fd,
+    0 0 40px #3894fd,
+    0 0 80px #3894fd,
     inset 0 0 5px #fff,
-    inset 0 0 10px #ff00ff,
-    inset 0 0 20px #ff00ff;
+    inset 0 0 10px #3894fd,
+    inset 0 0 20px #3894fd;
   animation: runningFlash 1.5s linear infinite;
   background: rgba(0, 0, 0, 0.849);
   transition: .7s;
@@ -354,7 +374,7 @@ button:hover {
   font-family: Inter;
   font-weight: 700;
   font-style: Bold;
-    font-size: 15px;
+    font-size: 25px;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
@@ -404,15 +424,15 @@ footer .toppart {
 }
 footer .toppart img{
     transition: .7s;
-    width: 20%; 
+    width: 15%; 
 }
 footer .toppart img:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
 footer .toppart .advantages2 {
-  width: 75%;
-  height: 300px;
+  width: 80%;
+  height: 225px;
   display: flex;
   padding-left: 5%;
   padding-right: 5%;
@@ -433,8 +453,8 @@ background: url('./landingimg/somebg.png');
 footer .toppart .advantages2 .advantage {
   width: 100/6%;
   height: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,7 +463,7 @@ footer .toppart .advantages2 .advantage {
 }
 footer .toppart .advantages2 .advantage img {
     cursor:auto;
-    width: 70%;
+    width: 55%;
     height: auto;
     filter: drop-shadow(0 0 5px #fff); /* Базовый свет */
    
@@ -478,7 +498,7 @@ height: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
-gap:50px;
+gap:25px;
 }
 footer .bottompart .txtpart p{
     font-family: Inter;
@@ -500,5 +520,5 @@ footer .bottompart img:hover{
 
 #oval{
 
-  display:none;
+ display:none;
 }
