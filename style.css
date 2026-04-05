@@ -14,10 +14,10 @@ body {
   background-color: #0f0113;
   /* Твой анимированный фон */
   background-image: url("./landingimg/bggradient.png");
-  background-size: 110% 110%;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
   animation: moveGradient 12s ease-in-out infinite;
   position: relative;
   overflow-x: hidden;
@@ -25,31 +25,79 @@ body {
   font-family: "Arial", sans-serif; /* Позже замени на футуристичный */
 }
 
-/* Светлячки */
-body::before {
-  content: "";
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  object-fit: cover; /* This makes the video behave like background-size: cover */
+  z-index: -1;       /* This pushes the video behind the content */
+}
+header {
+  width: 100%;
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: space-between;
+  height: 120px;
+  background: #140e3d98;
+  align-items: center;
   position: fixed;
-  top: -5%;
-  left: -5%;
-  width: 110%;
-  height: 110%;
-
-  background-image: url("./landingimg/particles.jpg");
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: center;
-
-  /* Смешивание с фоном */
-  mix-blend-mode: screen;
-
-  /* --- РЕГУЛИРОВКА ВИДИМОСТИ --- */
-  opacity: 0.25; /* 15% видимости — будут как легкая пыль */
-  filter: brightness(0.7) blur(1px); /* Делаем чуть тусклее и мягче */
-  /* ---------------------------- */
-
-  animation: moveFireflies 12s linear infinite; /* Замедлил движение для спокойствия */
-  z-index: -1;
-  pointer-events: none;
+  z-index: 10;
+}
+header .logo {
+  cursor: pointer;
+  width: 100px;
+  height: auto;
+}
+header .links {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 100px;
+  align-items: center;
+}
+header ul {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  background: #140e3dab;
+  border-radius: 20px;
+  padding: 0 5%;
+}
+header li {
+  cursor: pointer;
+}
+header ul li:nth-child(1) a {
+  color: white;
+}
+header li a {
+  font-family: Orbitron;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fa5fb1;
+  text-decoration: none;
+}
+header .links img {
+  width: 45px;
+  height: auto;
+  cursor: pointer;
 }
 
 /* Плавное движение (чуть медленнее) */
@@ -69,7 +117,7 @@ body::before {
   display: flex;
   align-items: center;
   padding: 0 5%;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* Девушка на фоне */
@@ -108,41 +156,41 @@ body::before {
   line-height: 120%;
   letter-spacing: 0%;
 }
-
+.txtpart h1 span {
+  color: #ffffffab;
+}
 /* Кнопки */
 .buttons {
-  height: 200px;
+  height: 120px;
   padding-right: 5%;
   padding-left: 5%;
   width: 100%;
   display: flex;
   gap: 20px;
   align-items: center;
-  background: #140E3D;
+  background: #140e3d;
 }
 
 button {
   background: none;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.438);
+  border: 2px solid #ff0088;
   padding: 20px 35px;
   border-radius: 40px;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s;
   font-family: Inter;
-font-weight: 600;
-font-style: Semi Bold;
-font-size: 32px;
-line-height: 100%;
-letter-spacing: 0%;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .btn-demo {
   background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(5px);
-
-
 }
 
 button:hover {
@@ -158,48 +206,6 @@ button:hover {
   vertical-align: middle;
 }
 
-/* Боковая панель */
-.aside {
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.aside img {
-    transition: .7s;
-  width: 60px;
-  cursor: pointer;
-}
-.aside img:hover {
-    transform: scale(1.1);
-}
-.aside .spans{
-  width: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.aside span {
-    transition: .7s;
-  font-family: Orbitron;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 36px;
-  color: #ff0088;
-  line-height: 100%;
-  letter-spacing: 0%;
-  cursor: pointer;
-}
-.aside span:hover {
-    transform: scale(1.1);
-}
-.aside .spans span:nth-child(2){
-color: white;
-}
 /* Анимации те же */
 @keyframes moveGradient {
   0%,
@@ -223,16 +229,15 @@ color: white;
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 50px;
-  padding-bottom: 50px;
   height: 600px;
   background: #01001950;
   border-radius: 6%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .services .card {
-  height: 100%;
+  height: 50%;
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -241,53 +246,28 @@ color: white;
   text-align: center;
 }
 .services .card img {
-  width: 90%;
+  width: 300px;
   height: auto;
   border: 2px solid #fff;
   border-radius: 12px;
 
   display: inline-block;
 
-  margin: 20px;
 
-  box-shadow:
-    0 0 10px #3894fd,
-    0 0 20px #3894fd,
-    0 0 40px #3894fd,
-    0 0 80px #3894fd,
-    inset 0 0 2px #fff,
-    inset 0 0 5px #3894fd,
-    inset 0 0 5px #3894fd;
-  animation: runningFlash 1.5s linear infinite;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #fe13df,
+            0 0 0.8rem #fe13df,
+            0 0 2.8rem #fe13df,
+            inset 0 0 1.3rem #fe13df; 
 }
-.services .card:nth-child(2) img {
-  animation: runningFlash 2s linear infinite;
-}
-.services .card:nth-child(3) img {
-  animation: runningFlash 3s linear infinite;
-}
+
 .services .card img:hover {
   transform: scale(1.1);
 }
 
 /* Анимация: меняем положение тени так, будто это бегающая точка */
-@keyframes runningFlash {
-  0% {
-    filter: drop-shadow(0px -10px 5px #fff); /* Огонек сверху */
-  }
-  25% {
-    filter: drop-shadow(10px 0px 5px #fff); /* Огонек справа */
-  }
-  50% {
-    filter: drop-shadow(0px 10px 5px #fff); /* Огонек снизу */
-  }
-  75% {
-    filter: drop-shadow(-10px 0px 5px #fff); /* Огонек слева */
-  }
-  100% {
-    filter: drop-shadow(0px -10px 5px #fff); /* Возврат наверх */
-  }
-}
+
 .services .card p {
   font-family: Inter;
   font-weight: 700;
@@ -334,9 +314,11 @@ color: white;
   width: 100%;
   height: 500px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .advantages .cards .card {
-  width: 100/3%;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -344,9 +326,7 @@ color: white;
   align-items: center;
 }
 .advantages .cards .card img {
-  width: 80%;
-  height: auto;
-  width: 90%;
+  width: 200px;
   height: auto;
   border: 2px solid #fff;
   border-radius: 12px;
@@ -355,65 +335,58 @@ color: white;
 
   margin: 20px;
 
-  box-shadow:
-    0 0 10px #3894fd,
-    0 0 20px #3894fd,
-    0 0 40px #3894fd,
-    0 0 80px #3894fd,
-    inset 0 0 5px #fff,
-    inset 0 0 10px #3894fd,
-    inset 0 0 20px #3894fd;
-  animation: runningFlash 1.5s linear infinite;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #13a0fe,
+            0 0 0.8rem #13a0fe,
+            0 0 2.8rem #13a0fe,
+            inset 0 0 1.3rem #13a0fe; 
   background: rgba(0, 0, 0, 0.849);
-  transition: .7s;
+  transition: 0.7s;
 }
 .advantages .cards .card img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .advantages .cards .card p {
   font-family: Inter;
   font-weight: 700;
   font-style: Bold;
-    font-size: 25px;
+  font-size: 25px;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
-}
-.advantages .cards .card:nth-child(2) img {
-  animation: runningFlash 2s linear infinite;
-}
-
-.advantages .cards .card:nth-child(3) img {
-  animation: runningFlash 1s linear infinite;
-}
-
-.advantages .cards .card:nth-child(4) img {
-  animation: runningFlash 3s linear infinite;
 }
 
 .advantages .card img:hover {
   transform: scale(1.1);
 }
 .roulette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background: url("./landingimg/roulette.gif");
-    height: 800px;
-    margin: 0;
-    background-size: cover; 
-    background-position: center;
+  height: 650px;
+  margin: 0;
+  background-size: contain;
+  background-position: center;
+  padding-bottom:  50px;
+  background: #060023b6;
 }
+.roulette img{
 
+  border-radius: 30px;
+  opacity: 0.6;
+  width: 700px;
+  height: auto;
+}
 footer {
-
   display: flex;
   flex-direction: column;
-  background: #000000b4;
   width: 100%;
-    padding: 100px 5%;
-    padding-top: 0;
-    height: auto;
-    margin-bottom: 0; 
-    
+  padding: 100px 5%;
+  padding-top: 0;
+  height: auto;
+  margin-bottom: 0;
 }
 footer .toppart {
   width: 100%;
@@ -422,33 +395,28 @@ footer .toppart {
   justify-content: space-between;
   align-items: center;
 }
-footer .toppart img{
-    transition: .7s;
-    width: 15%; 
+footer .toppart img {
+  transition: 0.7s;
+  width: 15%;
 }
-footer .toppart img:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+footer .toppart img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 footer .toppart .advantages2 {
   width: 80%;
-  height: 250px;
+  height: 225px;
   display: flex;
   padding-left: 5%;
   padding-right: 5%;
   justify-content: space-between;
-background: url('./landingimg/somebg.png'); 
-    background-size: cover;
-    background-position: center;
-    
-    /* Накладываем темно-синий фильтр поверх фото (как на скрине) */
-    background-color: rgba(255, 255, 255, 0.514); 
-    background-blend-mode: multiply; /* Это смешает фото с цветом */
-
-    /* Эффект стекла */
-    backdrop-filter: blur(10px);
-    border-radius: 45px; 
-    border: 1px solid rgb(255, 255, 255);
+  background:linear-gradient(rgba(55, 101, 255, 0.219), rgba(55, 101, 255, 0.219)), url("./landingimg/somebg.png") ;
+  
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(10px);
+  border-radius: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.733);
 }
 footer .toppart .advantages2 .advantage {
   width: 100/6%;
@@ -459,66 +427,67 @@ footer .toppart .advantages2 .advantage {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  
 }
 footer .toppart .advantages2 .advantage img {
-    cursor:auto;
-    width: 55%;
-    height: auto;
-    filter: drop-shadow(0 0 5px #fff); /* Базовый свет */
-   
+  cursor: auto;
+  width: 75px;
+  height: auto;
+  filter: drop-shadow(0 0 5px #fff); /* Базовый свет */
 }
 
-footer .toppart .advantages2 .advantage p{
-font-family: Inter;
-font-weight: 600;
-font-style: Semi Bold;
-font-size: 12px;
-line-height: 100%;
-letter-spacing: 0%;
-text-align: center;
-
+footer .toppart .advantages2 .advantage p {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 footer .bottompart {
-    padding-top: 100px;
-    width: 100%;
-    height: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding-top: 100px;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
 }
-footer .bottompart img{
-    width: 30%;
-    height: auto;
-}
-
-footer .bottompart .txtpart{
-width: 70%;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap:25px;
-}
-footer .bottompart .txtpart p{
-    font-family: Inter;
-font-weight: 400;
-font-style: Regular;
-font-size: 24px;
-line-height: 100%;
-letter-spacing: 0%;
-
-}
-footer .bottompart .txtpart p span{
-color: #FF0088;
+footer .bottompart img {
+  width: 150px;
+  height: auto;
 }
 
-footer .bottompart img:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+footer .bottompart .txtpart {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 25px;
+}
+footer .bottompart .txtpart p {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+footer .bottompart .txtpart p span {
+  color: #ff0088;
 }
 
-#oval{
+footer .bottompart img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 
- display:none;
+#oval {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -999;
+  opacity: 0.7;
+  top: 2300px;
 }
