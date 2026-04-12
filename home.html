@@ -1,115 +1,153 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css"/>
-    <title>Betaron</title>
-  </head>
-  <body>
-    <div class="background-wrapper hidden-element">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="./landingimg/14081587_1920_1080_60fps.mp4" type="video/mp4">
-  </video>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Betaron</title>
+</head>
+
+<body>
+  <div class="background-wrapper ">
+    <video autoplay muted loop playsinline class="bg-video ">
+      <!-- <source src="./landingimg/299633.mov" type="video/mp4"> -->
+      <source src="./landingimg/87222-601077697.mp4" type="video/mp4">
+    </video>
     <header class="hidden-element">
-      <img class="logo" src="./landingimg/betaronlogo.png" alt="">
 
       <div class="links">
-      <ul>
-      <li><a href="#">ES</a></li>
-      <li><a href="#">EN</a></li>
-      <li><a href="#">PT</a></li>
-    </ul>
-    <img src="./landingimg/whatsapp.png" alt="">
-    </div>
+        <ul>
+          <li><a href="#services">Ecosistema</a></li>
+          <li><a href="#advantages">Crecimiento</a></li>
+          <li><a href="#roulette">Global</a></li>
+        </ul>
+      </div>
+
+      <div class="languages">
+        <ul>
+          <li><a href="#">ES</a></li>
+          <li><a href="#">EN</a></li>
+          <li><a href="#">PT</a></li>
+        </ul>
+        <img src="./landingimg/whatsapp.png" alt="">
+      </div>
     </header>
     <section class="intro">
       <div class="imgpart">
-        <img class="hidden-element"
-          src="./landingimg/girl.png"
-          alt="Betaron Girl"
-        />
+        <img class="hidden-element" src="./landingimg/girl.png" alt="Betaron Girl" />
       </div>
 
       <div class="txtpart hidden-element">
         <h1>BETARON:<br /><span>Tecnología</span><br />para Escalar</h1>
-      
+
       </div>
 
     </section>
-      <div class="buttons hidden-element">
-          <button class="btn-demo">Solicita una demo</button>
-          <button class="btn-partner">
-            Convertite en socio
-            <img src="./landingimg/arrow.png" alt="" />
-          </button>
-        </div>
-    <section class="services hidden-element">
-      <div class="card">
-        <img src="./landingimg/casino.png" alt="" />
+    <div class="buttons hidden-element">
+      <button class="btn-demo">Solicita una demo</button>
+      <button class="btn-partner">
+        Convertite en socio
+        <img src="./landingimg/arrow.png" alt="" />
+      </button>
+    </div>
+    <section id="services" class="services hidden-element">
+      <div class="txtpartservices">
+        <h1>Un ecosistema completo de <span>iGaming</span></h1>
+        <p>Todo lo que necesitás para operar tu plataforma, en un solo lugar.</p>
+      </div>
+     <div class="cards"><div class="card">
+        <div class="imgblock"> <img src="./landingimg/casino.png" alt="" /></div>
         <p>Casino</p>
       </div>
       <div class="card">
-        <img src="./landingimg/cards.png" alt="" />
+        <div class="imgblock"> <img src="./landingimg/cards.png" alt="" /></div>
         <p>Casino en vivo</p>
       </div>
       <div class="card">
-        <img src="./landingimg/ball.png" alt="" />
+        <div class="imgblock"> <img src="./landingimg/ball.png" alt="" /></div>
         <p>Apuestas deportivas</p>
       </div>
-    </section>
-    <section class="advantages hidden-element">
-      <h1>Haz crecer tu negocio con una plataforma integral</h1>
-      <div class="cards">
-        <div class="card">
-          <img src="./landingimg/cloud.png" alt="" />
-          <p>Experiencia en Latam</p>
-        </div>
-        <div class="card">
-          <img src="./landingimg/def.png" alt="" />
-          <p>Basada en API en Cloud</p>
-        </div>
-        <div class="card">
-          <img src="./landingimg/dev.png" alt="" />
-          <p>Gestión de riesgos</p>
-        </div>
-        <div class="card">
-          <img src="./landingimg/latina.png" alt="" />
-          <p>Diseño y desarrollo</p>
-        </div>
       </div>
+    </section>
+    <section id="advantages" class="advantages hidden-element">
+      <h1>Haz crecer tu negocio con una plataforma integral</h1>
+      <p>Desarrolla y escala tu negocio de juegos con una plataforma totalmente<br>
+         integral y diseñada para mejorar el rendimiento de tu negocio</p>
+     <div class="advantages-grid">
+   
+    
+    <div class="advantage-item">
+        <img src="./landingimg/latina.png" alt="icon">
+        <div class="adv-text">
+            <h3>Experiencia en Latinoamérica</h3>
+            <p>Conocimiento profundo del mercado regional y sus regulaciones.</p>
+        </div>
+    </div>
+    
+    <div class="advantage-item">
+        <img src="./landingimg/cloud.png" alt="icon">
+        <div class="adv-text">
+            <h3>Basada en API y en la nube</h3>
+            <p>Infraestructura escalable con integración rápida y segura.</p>
+        </div>
+    </div>
+    
+    <div class="advantage-item">
+        <img src="./landingimg/def.png" alt="icon">
+        <div class="adv-text">
+            <h3>Gestión de riesgos en tiempo real</h3>
+            <p>Monitoreo continuo para proteger tu operación 24/7.</p>
+        </div>
+    </div>
+     <div class="advantage-item">
+        <img src="./landingimg/dev.png" alt="icon">
+        <div class="adv-text">
+            <h3>Diseño y desarrollo completos</h3>
+            <p>Soluciones personalizadas de principio a fin.</p>
+        </div>
+    </div>
+</div>
       <h1 class="hidden-element"><span>En Betaron, </span>el crecimiento se construye juntos</h1>
     </section>
-    <section class="roulette hidden-element"><img src="./landingimg/roulette.gif" alt=""></section>
+    <section id="roulette" class="roulette hidden-element"><img src="./landingimg/roulette.gif" alt=""></section>
     <footer>
       <div class="toppart hidden-element">
         <div class="advantages2">
           <div class="advantage">
+            <div class="imgblock">
             <img src="./landingimg/encrypted.png" alt="" />
+            </div>
             <p>Plataforma segura</p>
           </div>
           <div class="advantage">
+              <div class="imgblock">
             <img src="./landingimg/link.png" alt="" />
+            </div>
             <p>Tecnología de juego avanzada</p>
           </div>
           <div class="advantage">
+              <div class="imgblock">
             <img src="./landingimg/exchange.png" alt="" />
+            </div>
             <p>Soporte multidivisas</p>
           </div>
           <div class="advantage">
+              <div class="imgblock">
             <img src="./landingimg/tech.png" alt="" />
+            </div>
             <p>Soporte multilenguaje</p>
           </div>
           <div class="advantage">
-            <img
-              src="./landingimg/performance.png"
-              alt=""
-            />
+              <div class="imgblock">
+            <img src="./landingimg/performance.png" alt="" />
+            </div>
             <p>Plataforma de alto rendimiento</p>
           </div>
           <div class="advantage">
+              <div class="imgblock">
             <img src="./landingimg/support.png" alt="" />
+            </div>
             <p>Soporte técnico 24/7</p>
           </div>
         </div>
@@ -126,25 +164,56 @@
       </div>
     </footer>
     <img id="oval" src="./landingimg/bgparticle.png" alt="">
-  </body>
-  <script>
-   const observer = new IntersectionObserver((entries) => {
+</body>
+<script>
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // Элемент вошел в зону видимости — показываем
-            entry.target.classList.add('show-element');
-        } else {
-            // Элемент вышел из зоны видимости — скрываем обратно
-            entry.target.classList.remove('show-element');
-        }
+      if (entry.isIntersecting) {
+        // Элемент вошел в зону видимости — показываем
+        entry.target.classList.add('show-element');
+      } else {
+        // Элемент вышел из зоны видимости — скрываем обратно
+        entry.target.classList.remove('show-element');
+      }
     });
-}, {
+  }, {
     // Настраиваем чувствительность: 
     // 0.1 означает, что эффект сработает, когда видно хотя бы 10% элемента
-    threshold: 0.1 
-});
+    threshold: 0.1
+  });
 
-const hiddenElements = document.querySelectorAll('.hidden-element');
-hiddenElements.forEach((el) => observer.observe(el));
-  </script>
+  const hiddenElements = document.querySelectorAll('.hidden-element');
+  hiddenElements.forEach((el) => observer.observe(el));
+
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            const targetPosition = target.offsetTop;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            const duration = 800; // animation time in ms
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            // Easing function for smooth acceleration & deceleration
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        });
+    });
+</script>
+
 </html>
